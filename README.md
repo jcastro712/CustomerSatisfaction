@@ -49,25 +49,25 @@ Performance on the holdout set:
 
 Random Forest was the strongest model on every metric, with 83% accuracy and the highest AUC (0.755). All three models achieved high recall (~96%), meaning they rarely missed a genuinely positive review, but differed more in precision and AUC (how well they separated the two classes overall).
 
-<p align="center"> 
-Most customers left positive reviews, indicating overall high satisfaction: <br/> 
-<img src="images/Figure_1.png" height="50%" width="50%" alt="Distribution of Customer Satisfaction"/> 
+<p align="center"> <br/> 
+<img src="images/Figure_1.png" height="50%" width="50%" alt="Distribution of Customer Satisfaction"/> <br/>
+Most customers left positive reviews, indicating overall high satisfaction
 <br /> 
 <br /> 
-Delayed orders were consistently associated with lower review scores: <br/> 
-<img src="images/Figure_2.png" height="50%" width="50%" alt="Customer Satisfaction vs Delivery Delay"/> 
+<img src="images/Figure_2.png" height="50%" width="50%" alt="Customer Satisfaction vs Delivery Delay"/> <br/> 
+Delayed orders were consistently associated with lower review scores
 <br /> 
 <br /> 
-Logistic Regression ranks delivery delay first by coefficient magnitude, with customer state also playing a role: <br/> 
-<img src="images/Figure_3.png" height="50%" width="50%" alt="Logit Model - Top 10 Most Important Variables"/> 
+<img src="images/Figure_3.png" height="50%" width="50%" alt="Logit Model - Top 10 Most Important Variables"/> <br/> 
+Logistic Regression ranks delivery delay first by coefficient magnitude, with customer state also playing a role 
 <br /> 
 <br /> 
-Random Forest highlights a broader set of drivers, including total payment, price, and product weight: <br/> 
-<img src="images/Figure_4.png" height="50%" width="50%" alt="Random Forest - Top 10 Most Important Variables"/> 
+<img src="images/Figure_4.png" height="50%" width="50%" alt="Random Forest - Top 10 Most Important Variables"/> <br/> 
+Random Forest highlights a broader set of drivers, including total payment, price, and product weight
 <br /> 
 <br /> 
-XGBoost also places delivery delay at the top, while emphasizing payment amount, price, and approval time: <br/> 
-<img src="images/Figure_5.png" height="50%" width="50%" alt="XGBoost - Top 10 Most Important Variables"/> 
+<img src="images/Figure_5.png" height="50%" width="50%" alt="XGBoost - Top 10 Most Important Variables"/> <br/>
+XGBoost also places delivery delay at the top, while emphasizing payment amount, price, and approval time
 </p>
 
 Across all three models, <b>delivery delay</b> was consistently the single most important predictor of a positive or negative review, though the tree-based models (Random Forest and XGBoost) surfaced additional signal from payment totals, product price, and product weight that the linear logistic model captured less clearly.
