@@ -72,6 +72,15 @@ XGBoost also places delivery delay at the top, while emphasizing payment amount,
 
 Across all three models, <b>delivery delay</b> was consistently the single most important predictor of a positive or negative review, though the tree-based models (Random Forest and XGBoost) surfaced additional signal from payment totals, product price, and product weight that the linear logistic model captured less clearly.
 
+<h2>Next Steps and Limitations</h2>
+
+<b>No customer history:</b> the dataset captures a single order per review; adding repeat-purchase behavior, order frequency, or loyalty measures could meaningfully improve predictions and help identify customers at risk of leaving before they do
+
+<b>Threshold and imbalance:</b> all models used a fixed 0.5 classification threshold; since positive reviews are the majority class, tuning the threshold or applying class weighting could improve precision without sacrificing recall
+
+<b>Feature encoding:</b> XGBoost required one-hot encoding categorical variables that Random Forest and Logistic Regression handled natively, testing embedding-based or target encoding for high-cardinality features like product category could be a next step
+
+
 <!--
  ```diff
 - text in red
