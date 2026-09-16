@@ -2,7 +2,7 @@
 
  ### [View Full Report](https://github.com/jcastro712/CustomerSatisfaction/blob/main/Predicting%20Customer%20Satisfaction%20Short%20Version.pdf)
 
- ### [View R Code](https://github.com/jcastro712/CustomerSatisfaction/blob/main/Predicting%20Customer%20Satisfaction%20Short%20Version.pdf)
+ ### [View R Code](https://github.com/jcastro712/CustomerSatisfaction/blob/main/Final%20Project%20Code.R)
 
 <h2>Description</h2>
 This project uses machine learning in R to predict whether a customer will leave a positive review (4-5 stars) or a negative review (1-3 stars) on Olist, a Brazilian e-commerce marketplace. Six raw Olist datasets (customers, orders, order items, payments, reviews, and products) are cleaned and merged into a single modeling table of over 100,000 orders, then used to train and compare three classifiers: Logistic Regression, Random Forest, and XGBoost.
