@@ -51,7 +51,7 @@ Random Forest was the strongest model on every metric, with 83% accuracy and the
 
 <p align="center"> 
 Most customers left positive reviews, indicating overall high satisfaction: <br/> 
-<img src="images/figure1_review_distribution.png" height="80%" width="80%" alt="Distribution of Customer Satisfaction"/> 
+<img src="images/figure1.png" height="80%" width="80%" alt="Distribution of Customer Satisfaction"/> 
 <br /> 
 <br /> 
 Delayed orders were consistently associated with lower review scores: <br/> 
