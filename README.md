@@ -38,34 +38,37 @@ Customer satisfaction drives repeat purchases and referrals in online retail. Fo
 
 <h2>Results</h2>
 
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Performance on the holdout set:
+| Model | Accuracy | Precision | Recall | AUC |
+| --- | --- | --- | --- | --- |
+| Logistic Regression | 0.795 | 0.810 | 0.959 | 0.676 |
+| Random Forest | 0.831 | 0.842 | 0.962 | 0.755 |
+| XGBoost | 0.814 | 0.826 | 0.962 | 0.720 |
+
+Random Forest was the strongest model on every metric, with 83% accuracy and the highest AUC (0.755). All three models achieved high recall (~96%), meaning they rarely missed a genuinely positive review, but differed more in precision and AUC (how well they separated the two classes overall).
+
+<p align="center"> 
+Most customers left positive reviews, indicating overall high satisfaction: <br/> 
+<img src="images/figure1_review_distribution.png" height="80%" width="80%" alt="Distribution of Customer Satisfaction"/> 
+<br /> 
+<br /> 
+Delayed orders were consistently associated with lower review scores: <br/> 
+<img src="images/figure2_delivery_delay.png" height="80%" width="80%" alt="Customer Satisfaction vs Delivery Delay"/> 
+<br /> 
+<br /> 
+Logistic Regression ranks delivery delay first by coefficient magnitude, with customer state also playing a role: <br/> 
+<img src="images/figure3_logit_importance.png" height="80%" width="80%" alt="Logit Model - Top 10 Most Important Variables"/> 
+<br /> 
+<br /> 
+Random Forest highlights a broader set of drivers, including total payment, price, and product weight: <br/> 
+<img src="images/figure4_rf_importance.png" height="80%" width="80%" alt="Random Forest - Top 10 Most Important Variables"/> 
+<br /> 
+<br /> 
+XGBoost also places delivery delay at the top, while emphasizing payment amount, price, and approval time: <br/> 
+<img src="images/figure5_xgb_importance.png" height="80%" width="80%" alt="XGBoost - Top 10 Most Important Variables"/> 
 </p>
+
+Across all three models, <b>delivery delay</b> was consistently the single most important predictor of a positive or negative review, though the tree-based models (Random Forest and XGBoost) surfaced additional signal from payment totals, product price, and product weight that the linear logistic model captured less clearly.
 
 <!--
  ```diff
